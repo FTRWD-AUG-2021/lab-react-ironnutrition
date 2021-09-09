@@ -5,11 +5,16 @@ import 'bulma/css/bulma.css';
 import foods from './foods.json';
 import FoodBox from './components/FoodBox';
 
-
 function App() {
+  const ShowFoods = () => {
+    return foods.map((foodItem) => {
+      return <FoodBox food={foodItem} />;
+    });
+  };
+
   return (
     <div className="App">
-      <FoodBox food={foods} />
+      <ShowFoods />
     </div>
   );
 }
